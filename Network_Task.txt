@@ -1,0 +1,428 @@
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ nslookup guvi.in
+Server:         127.0.0.53
+Address:        127.0.0.53#53
+
+Non-authoritative answer:
+Name:   guvi.in
+Address: 172.67.70.207
+Name:   guvi.in
+Address: 104.26.5.88
+Name:   guvi.in
+Address: 104.26.4.88
+Name:   guvi.in
+Address: 2606:4700:20::681a:558
+Name:   guvi.in
+Address: 2606:4700:20::ac43:46cf
+Name:   guvi.in
+Address: 2606:4700:20::681a:458
+
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ dig guvi.in
+
+; <<>> DiG 9.18.28-0ubuntu0.24.04.1-Ubuntu <<>> guvi.in
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 32796
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;guvi.in.                       IN      A
+
+;; ANSWER SECTION:
+guvi.in.                271     IN      A       104.26.5.88
+guvi.in.                271     IN      A       104.26.4.88
+guvi.in.                271     IN      A       172.67.70.207
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Mon Nov 04 05:52:09 UTC 2024
+;; MSG SIZE  rcvd: 84
+
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ htop
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ ping 172.67.70.207
+PING 172.67.70.207 (172.67.70.207) 56(84) bytes of data.
+64 bytes from 172.67.70.207: icmp_seq=1 ttl=57 time=1.53 ms
+64 bytes from 172.67.70.207: icmp_seq=2 ttl=57 time=1.29 ms
+
+--- 172.67.70.207 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 1.291/1.408/1.526/0.117 ms
+^Cubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       6.8G  2.1G  4.7G  31% /
+tmpfs           479M     0  479M   0% /dev/shm
+tmpfs           192M  872K  191M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/xvda16     881M  133M  687M  17% /boot
+/dev/xvda15     105M  6.1M   99M   6% /boot/efi
+tmpfs            96M   12K   96M   1% /run/user/1000
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ free -m
+               total        used        free      shared  buff/cache   available
+Mem:             957         310         197           0         608         646
+Swap:              0           0           0
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ iostat
+Linux 6.8.0-1017-aws (ip-172-31-45-118)         11/04/24        _x86_64_        (1 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.09    0.01    0.04    0.02   17.33   82.50
+
+Device             tps    kB_read/s    kB_wrtn/s    kB_dscd/s    kB_read    kB_wrtn    kB_dscd
+loop0             0.00         0.01         0.00         0.00        343          0          0
+loop1             0.01         0.18         0.00         0.00       4029          0          0
+loop2             0.00         0.02         0.00         0.00        365          0          0
+loop3             0.00         0.07         0.00         0.00       1668          0          0
+loop4             0.00         0.00         0.00         0.00         10          0          0
+xvda              0.92        22.52        12.22         0.00     516638     280410          0
+
+
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  1.3  22220 13172 ?        Ss   Nov03   0:01 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Nov03   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    Nov03   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-rcu_g]
+root           5  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-rcu_p]
+root           6  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-slub_]
+root           7  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-netns]
+root          10  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/0:0H-events_highpri]
+root          12  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-mm_pe]
+root          13  0.0  0.0      0     0 ?        I    Nov03   0:00 [rcu_tasks_rude_kthread]
+root          14  0.0  0.0      0     0 ?        I    Nov03   0:00 [rcu_tasks_trace_kthread]
+root          15  0.0  0.0      0     0 ?        S    Nov03   0:00 [ksoftirqd/0]
+root          16  0.0  0.0      0     0 ?        I    Nov03   0:00 [rcu_sched]
+root          17  0.0  0.0      0     0 ?        S    Nov03   0:00 [migration/0]
+root          18  0.0  0.0      0     0 ?        S    Nov03   0:00 [idle_inject/0]
+root          19  0.0  0.0      0     0 ?        S    Nov03   0:00 [cpuhp/0]
+root          20  0.0  0.0      0     0 ?        S    Nov03   0:00 [kdevtmpfs]
+root          21  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-inet_]
+root          23  0.0  0.0      0     0 ?        S    Nov03   0:00 [kauditd]
+root          24  0.0  0.0      0     0 ?        S    Nov03   0:00 [khungtaskd]
+root          25  0.0  0.0      0     0 ?        S    Nov03   0:00 [oom_reaper]
+root          27  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-write]
+root          28  0.0  0.0      0     0 ?        S    Nov03   0:00 [kcompactd0]
+root          29  0.0  0.0      0     0 ?        SN   Nov03   0:00 [ksmd]
+root          30  0.0  0.0      0     0 ?        SN   Nov03   0:00 [khugepaged]
+root          31  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-kinte]
+root          32  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-kbloc]
+root          33  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-blkcg]
+root          34  0.0  0.0      0     0 ?        S    Nov03   0:00 [irq/9-acpi]
+root          35  0.0  0.0      0     0 ?        S    Nov03   0:00 [xen-balloon]
+root          36  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-tpm_d]
+root          37  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-ata_s]
+root          38  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-md]
+root          39  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-md_bi]
+root          40  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-edac-]
+root          41  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-devfr]
+root          42  0.0  0.0      0     0 ?        S    Nov03   0:00 [watchdogd]
+root          43  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/0:1H-kblockd]
+root          44  0.0  0.0      0     0 ?        S    Nov03   0:00 [kswapd0]
+root          45  0.0  0.0      0     0 ?        S    Nov03   0:00 [ecryptfs-kthread]
+root          46  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-kthro]
+root          47  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-acpi_]
+root          48  0.0  0.0      0     0 ?        S    Nov03   0:00 [xenbus]
+root          49  0.0  0.0      0     0 ?        S    Nov03   0:00 [xenwatch]
+root          50  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-nvme-]
+root          51  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-nvme-]
+root          52  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-nvme-]
+root          53  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-nvme-]
+root          54  0.0  0.0      0     0 ?        S    Nov03   0:00 [scsi_eh_0]
+root          55  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-scsi_]
+root          56  0.0  0.0      0     0 ?        S    Nov03   0:00 [scsi_eh_1]
+root          57  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-scsi_]
+root          60  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-mld]
+root          61  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-ipv6_]
+root          68  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-kstrp]
+root          70  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/u31:0]
+root          83  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-charg]
+root          84  0.0  0.0      0     0 ?        S    Nov03   0:00 [jbd2/xvda1-8]
+root          85  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-ext4-]
+root         125  0.0  1.5  66872 15312 ?        S<s  Nov03   0:00 /usr/lib/systemd/systemd-journald
+root         145  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-kmpat]
+root         146  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-kmpat]
+root         184  0.0  2.7 288952 27136 ?        SLsl Nov03   0:01 /sbin/multipathd -d -s
+root         187  0.0  0.8  26468  8180 ?        Ss   Nov03   0:00 /usr/lib/systemd/systemd-udevd
+root         202  0.0  0.0      0     0 ?        S    Nov03   0:00 [psimon]
+root         262  0.0  0.0      0     0 ?        S    Nov03   0:00 [jbd2/xvda16-8]
+root         263  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-ext4-]
+systemd+     309  0.0  1.3  21584 12928 ?        Ss   Nov03   0:00 /usr/lib/systemd/systemd-resolved
+root         328  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-crypt]
+systemd+     457  0.0  0.9  22396  9728 ?        Ss   Nov03   0:00 /usr/lib/systemd/systemd-networkd
+root         500  0.0  0.1   2720  1920 ?        Ss   Nov03   0:00 /usr/sbin/acpid
+root         504  0.0  0.2   7224  2688 ?        Ss   Nov03   0:00 /usr/sbin/cron -f -P
+message+     505  0.0  0.5   9888  5504 ?        Ss   Nov03   0:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         512  0.0  2.1  32456 20608 ?        Ss   Nov03   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+polkitd      513  0.0  0.9 383076  9480 ?        Ssl  Nov03   0:00 /usr/lib/polkit-1/polkitd --no-debug
+root         515  0.0  1.8 1684096 18192 ?       Ssl  Nov03   0:00 /snap/amazon-ssm-agent/7993/amazon-ssm-agent
+root         522  0.0  3.1 1769668 30604 ?       Ssl  Nov03   0:00 /usr/lib/snapd/snapd
+root         534  0.0  0.8  18144  8704 ?        Ss   Nov03   0:00 /usr/lib/systemd/systemd-logind
+root         548  0.0  1.3 468824 13440 ?        Ssl  Nov03   0:00 /usr/libexec/udisks2/udisksd
+syslog       629  0.0  0.6 222508  6016 ?        Ssl  Nov03   0:00 /usr/sbin/rsyslogd -n -iNONE
+_chrony      636  0.0  0.3  19388  3584 ?        S    Nov03   0:00 /usr/sbin/chronyd -F 1
+_chrony      648  0.0  0.2  11060  2324 ?        S    Nov03   0:00 /usr/sbin/chronyd -F 1
+root         683  0.0  0.2   6148  2048 ttyS0    Ss+  Nov03   0:00 /sbin/agetty -o -p -- \u --keep-baud 115200,57600,38400,9600 - vt220
+root         715  0.0  2.3 109996 22912 ?        Ssl  Nov03   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         741  0.0  1.2 391876 12416 ?        Ssl  Nov03   0:00 /usr/sbin/ModemManager
+root         743  0.0  0.1   6104  1920 tty1     Ss+  Nov03   0:00 /sbin/agetty -o -p -- \u --noclear - linux
+root         897  0.0  0.8  12020  7936 ?        Ss   Nov03   0:00 sshd: /usr/sbin/sshd -D -o AuthorizedKeysCommand /usr/share/ec2-instance-connect/eic_run_authori
+root        1402  0.0  0.0      0     0 ?        I<   Nov03   0:00 [kworker/R-tls-s]
+root        4281  0.0  0.0      0     0 ?        I    04:12   0:00 [kworker/u30:2-writeback]
+root        4393  0.0  0.0      0     0 ?        I    05:20   0:00 [kworker/u30:3-events_unbound]
+root        4415  0.0  0.0      0     0 ?        I    05:40   0:00 [kworker/0:1-mm_percpu_wq]
+root        4422  0.0  0.0      0     0 ?        I    05:49   0:00 [kworker/u30:1-events_power_efficient]
+root        4426  0.0  0.0      0     0 ?        I    05:50   0:00 [kworker/0:0-cgroup_destroy]
+root        4427  0.0  0.8  14712  8436 ?        Ss   05:51   0:00 sshd: ubuntu [priv]
+root        4772  0.0  0.0      0     0 ?        S    05:51   0:00 [psimon]
+ubuntu      4774  0.0  1.1  20172 11392 ?        Ss   05:51   0:00 /usr/lib/systemd/systemd --user
+ubuntu      4775  0.0  0.3  21144  3516 ?        S    05:51   0:00 (sd-pam)
+ubuntu      4882  0.0  0.7  14968  6944 ?        S    05:51   0:00 sshd: ubuntu@pts/0
+ubuntu      4883  0.0  0.5   9192  5376 pts/0    Ss   05:51   0:00 -bash
+root        4911  0.0  0.0      0     0 ?        I    05:58   0:00 [kworker/u30:0-events_unbound]
+root        4915  0.0  0.0      0     0 ?        I    06:00   0:00 [kworker/0:2]
+root        4916  0.0  0.0      0     0 ?        I    06:00   0:00 [kworker/0:3]
+ubuntu      4925  0.0  0.4  11320  4352 pts/0    R+   06:04   0:00 ps aux
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ mpstat 
+Linux 6.8.0-1017-aws (ip-172-31-45-118)         11/04/24        _x86_64_        (1 CPU)
+
+06:05:13     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+06:05:13     all    0.09    0.01    0.04    0.02    0.00    0.00   17.33    0.00    0.00   82.50
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ telnet guvi.in 80
+Trying 104.26.5.88...
+Connected to guvi.in.
+Escape character is '^]'.
+q
+HTTP/1.1 400 Bad Request
+Server: cloudflare
+Date: Mon, 04 Nov 2024 06:06:49 GMT
+Content-Type: text/html
+Content-Length: 155
+Connection: close
+CF-RAY: -
+
+<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<center><h1>400 Bad Request</h1></center>
+<hr><center>cloudflare</center>
+</body>
+</html>
+Connection closed by foreign host.
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ telnet guvi.in 22
+Trying 104.26.5.88...
+^C
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ telnet guvi.in 443
+Trying 104.26.5.88...
+Connected to guvi.in.
+Escape character is '^]'.
+^CConnection closed by foreign host.
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ netstat 
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp6       0    152 ip-172-31-45-118.ec:ssh ec2-18-206-107-27:51949 ESTABLISHED
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  3      [ ]         SEQPACKET  CONNECTED     6751     
+unix  2      [ ]         DGRAM      CONNECTED     6711     
+unix  2      [ ]         DGRAM      CONNECTED     24365    
+unix  3      [ ]         STREAM     CONNECTED     6928     /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     24393    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     7409     
+unix  3      [ ]         STREAM     CONNECTED     6388     
+unix  2      [ ]         DGRAM                    24388    /run/user/1000/systemd/notify
+unix  2      [ ]         DGRAM      CONNECTED     6571     
+unix  3      [ ]         STREAM     CONNECTED     6705     /run/dbus/system_bus_socket
+unix  3      [ ]         SEQPACKET  CONNECTED     6752     
+unix  3      [ ]         STREAM     CONNECTED     6813     /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     6701     
+unix  3      [ ]         STREAM     CONNECTED     7431     
+unix  3      [ ]         STREAM     CONNECTED     6467     
+unix  3      [ ]         STREAM     CONNECTED     8002     /run/systemd/journal/stdout
+unix  3      [ ]         DGRAM      CONNECTED     24389    
+unix  3      [ ]         DGRAM      CONNECTED     1702     /run/systemd/notify
+unix  2      [ ]         DGRAM                    6448     
+unix  3      [ ]         STREAM     CONNECTED     6837     
+unix  3      [ ]         STREAM     CONNECTED     7432     /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     24338    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    1726     /run/systemd/journal/syslog
+unix  3      [ ]         DGRAM      CONNECTED     24390    
+unix  11     [ ]         DGRAM      CONNECTED     1730     /run/systemd/journal/dev-log
+unix  8      [ ]         DGRAM      CONNECTED     1732     /run/systemd/journal/socket
+unix  3      [ ]         STREAM     CONNECTED     7412     /run/dbus/system_bus_socket
+unix  2      [ ]         STREAM     CONNECTED     23913    
+unix  2      [ ]         DGRAM      CONNECTED     24274    
+unix  3      [ ]         STREAM     CONNECTED     6473     /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     24337    
+unix  3      [ ]         STREAM     CONNECTED     7445     
+unix  3      [ ]         STREAM     CONNECTED     8001     
+unix  3      [ ]         STREAM     CONNECTED     6389     /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     6927     
+unix  2      [ ]         DGRAM      CONNECTED     6938     
+unix  3      [ ]         STREAM     CONNECTED     6810     
+unix  3      [ ]         STREAM     CONNECTED     7444     
+unix  2      [ ]         DGRAM      CONNECTED     24348    
+unix  3      [ ]         STREAM     CONNECTED     6615     /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     6838     
+unix  3      [ ]         STREAM     CONNECTED     2404     
+unix  3      [ ]         STREAM     CONNECTED     6253     /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM      CONNECTED     5949     
+unix  3      [ ]         STREAM     CONNECTED     6355     /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     6160     
+unix  3      [ ]         STREAM     CONNECTED     2445     
+unix  2      [ ]         DGRAM      CONNECTED     7221     
+unix  3      [ ]         STREAM     CONNECTED     3483     
+unix  3      [ ]         DGRAM      CONNECTED     5692     
+unix  3      [ ]         STREAM     CONNECTED     2676     /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     6289     
+unix  3      [ ]         STREAM     CONNECTED     3484     /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     6252     
+unix  3      [ ]         STREAM     CONNECTED     7148     /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM      CONNECTED     7349     
+unix  3      [ ]         STREAM     CONNECTED     6032     /run/systemd/journal/stdout
+unix  3      [ ]         DGRAM      CONNECTED     1704     
+unix  3      [ ]         STREAM     CONNECTED     6083     /run/systemd/journal/stdout
+unix  3      [ ]         DGRAM      CONNECTED     5693     
+unix  3      [ ]         DGRAM      CONNECTED     2474     
+unix  3      [ ]         STREAM     CONNECTED     6177     /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     24667    
+unix  3      [ ]         DGRAM      CONNECTED     5691     
+unix  2      [ ]         DGRAM      CONNECTED     3878     
+unix  3      [ ]         STREAM     CONNECTED     6176     
+unix  3      [ ]         DGRAM      CONNECTED     1703     
+unix  2      [ ]         DGRAM      CONNECTED     6152     
+unix  3      [ ]         STREAM     CONNECTED     7365     /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     7147     
+unix  3      [ ]         STREAM     CONNECTED     6030     
+unix  2      [ ]         DGRAM      CONNECTED     5680     
+unix  3      [ ]         STREAM     CONNECTED     5665     
+unix  3      [ ]         STREAM     CONNECTED     6383     /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     2698     /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     24666    
+unix  3      [ ]         DGRAM      CONNECTED     5694     
+unix  2      [ ]         DGRAM      CONNECTED     2470     
+unix  2      [ ]         DGRAM      CONNECTED     6750     /run/chrony/chronyd.sock
+unix  3      [ ]         STREAM     CONNECTED     6081     
+unix  2      [ ]         DGRAM      CONNECTED     1842     
+unix  2      [ ]         DGRAM      CONNECTED     2027     
+unix  3      [ ]         STREAM     CONNECTED     6161     
+unix  3      [ ]         STREAM     CONNECTED     7361     
+unix  3      [ ]         STREAM     CONNECTED     5666     /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     6291     /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM      CONNECTED     6042     
+unix  3      [ ]         STREAM     CONNECTED     7262     /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     6164     /run/dbus/system_bus_socket
+unix  3      [ ]         DGRAM      CONNECTED     2475     
+unix  3      [ ]         STREAM     CONNECTED     6163     /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     7260     
+unix  3      [ ]         STREAM     CONNECTED     6381     
+unix  3      [ ]         STREAM     CONNECTED     6600     @b7b834f8dca74127/bus/systemd-logind/system
+unix  3      [ ]         STREAM     CONNECTED     5893     @5d4aa6b291c78e14/bus/systemd-network/bus-api-network
+unix  3      [ ]         STREAM     CONNECTED     5892     @4178f31e9daea794/bus/systemd-resolve/bus-api-resolve
+unix  3      [ ]         STREAM     CONNECTED     6348     @f4039a277dbb87e8/bus/systemd/bus-api-system
+unix  3      [ ]         STREAM     CONNECTED     24392    @5ffa5b8e1f550eab/bus/systemd/bus-system
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ netstat -an | grep 9000
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ netstat -tuln
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.54:53           0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN     
+tcp6       0      0 :::22                   :::*                    LISTEN     
+udp        0      0 127.0.0.1:323           0.0.0.0:*                          
+udp        0      0 127.0.0.54:53           0.0.0.0:*                          
+udp        0      0 127.0.0.53:53           0.0.0.0:*                          
+udp        0      0 172.31.45.118:68        0.0.0.0:*                          
+udp6       0      0 ::1:323                 :::*                               
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ ss -tuln
+Netid          State           Recv-Q           Send-Q                          Local Address:Port                     Peer Address:Port          Process          
+udp            UNCONN          0                0                                   127.0.0.1:323                           0.0.0.0:*                              
+udp            UNCONN          0                0                                  127.0.0.54:53                            0.0.0.0:*                              
+udp            UNCONN          0                0                               127.0.0.53%lo:53                            0.0.0.0:*                              
+udp            UNCONN          0                0                          172.31.45.118%enX0:68                            0.0.0.0:*                              
+udp            UNCONN          0                0                                       [::1]:323                              [::]:*                              
+tcp            LISTEN          0                4096                               127.0.0.54:53                            0.0.0.0:*                              
+tcp            LISTEN          0                4096                            127.0.0.53%lo:53                            0.0.0.0:*                              
+tcp            LISTEN          0                4096                                        *:22                                  *:*                              
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ iftop
+Command 'iftop' not found, but can be installed with:
+sudo apt install iftop
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ ifconfig 
+enX0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 172.31.45.118  netmask 255.255.240.0  broadcast 172.31.47.255
+        inet6 fe80::cb7:a6ff:fead:77cb  prefixlen 64  scopeid 0x20<link>
+        ether 0e:b7:a6:ad:77:cb  txqueuelen 1000  (Ethernet)
+        RX packets 13159  bytes 8990318 (8.9 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 7750  bytes 912223 (912.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 314  bytes 34300 (34.3 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 314  bytes 34300 (34.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+ubuntu@ip-172-31-45-118:~$ sudo iftop -i enX0
+sudo: iftop: command not found
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ sudo ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22                         ALLOW       Anywhere                  
+80                         ALLOW       Anywhere                  
+443                        ALLOW       Anywhere                  
+22 (v6)                    ALLOW       Anywhere (v6)             
+80 (v6)                    ALLOW       Anywhere (v6)             
+443 (v6)                   ALLOW       Anywhere (v6)             
+
+ubuntu@ip-172-31-45-118:~$ 
