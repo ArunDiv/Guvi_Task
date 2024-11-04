@@ -1,0 +1,95 @@
+
+
+[vagrant@arun my_folder]$
+[vagrant@arun my_folder]$
+[vagrant@arun my_folder]$
+[vagrant@arun my_folder]$ touch Permission_Task.txt
+[vagrant@arun my_folder]$
+[vagrant@arun my_folder]$
+[vagrant@arun my_folder]$ ll
+total 8
+-rw-r--r--. 1 vagrant vagrant 45 Oct 27 21:00 another_file.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files10.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files11.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files12.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files13.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files14.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files15.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files16.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files17.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files18.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files19.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files1.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files20.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files2.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files3.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files4.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files5.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files6.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files7.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files8.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files9.txt
+-rw-r--r--. 1 vagrant vagrant 14 Oct 27 20:59 my_file.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:38 Permission_Task.txt
+[vagrant@arun my_folder]$
+[vagrant@arun my_folder]$
+[vagrant@arun my_folder]$ chmod u=w,g=rw,o=rwx Permission_Task.txt
+[vagrant@arun my_folder]$
+[vagrant@arun my_folder]$
+[vagrant@arun my_folder]$ ls -lrt
+total 8
+-rw-r--r--. 1 vagrant vagrant 14 Oct 27 20:59 my_file.txt
+-rw-r--r--. 1 vagrant vagrant 45 Oct 27 21:00 another_file.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files2.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files1.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files3.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files9.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files8.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files7.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files6.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files5.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files4.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files12.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files11.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files10.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files16.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files15.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files14.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files13.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files20.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files19.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files18.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files17.txt
+--w-rw-rwx. 1 vagrant vagrant  0 Oct 27 21:38 Permission_Task.txt
+[vagrant@arun my_folder]$
+[vagrant@arun my_folder]$
+[vagrant@arun my_folder]$ chmod u=r Permission_Task.txt
+[vagrant@arun my_folder]$
+[vagrant@arun my_folder]$ ls -lrt
+total 8
+-rw-r--r--. 1 vagrant vagrant 14 Oct 27 20:59 my_file.txt
+-rw-r--r--. 1 vagrant vagrant 45 Oct 27 21:00 another_file.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files2.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files1.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files3.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files9.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files8.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files7.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files6.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files5.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files4.yml
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files12.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files11.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files10.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files16.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files15.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files14.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files13.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files20.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files19.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files18.txt
+-rw-r--r--. 1 vagrant vagrant  0 Oct 27 21:05 files17.txt
+-r--rw-rwx. 1 vagrant vagrant  0 Oct 27 21:38 Permission_Task.txt
+[vagrant@arun my_folder]$
+[vagrant@arun my_folder]$
+[vagrant@arun my_folder]$
