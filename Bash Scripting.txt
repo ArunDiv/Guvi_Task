@@ -1,0 +1,127 @@
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ bash HTTP_Error.sh www.guvi.com
+
+ Name of the script is HTTP_Error.sh:
+
+
+
+
+
+ checking the https status 
+
+
+ unsucessful connection due to 301 
+
+
+
+
+ubuntu@ip-172-31-45-118:~$ bash HTTP_Error.sh https://v2.zenclass.in/class
+
+ Name of the script is HTTP_Error.sh:
+
+
+
+
+
+ checking the https status 
+
+
+ sucessful connection due to 200 
+
+
+
+
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ cat HTTP_Error.sh 
+#! /bin/bash
+
+
+echo
+echo " Name of the script is $0:"
+echo
+echo
+url=$1
+https_status=$(curl -s -o /dev/null -w "%{http_code}" "$url")
+echo
+echo
+echo
+echo " checking the https status "
+echo
+echo
+if [ $https_status -ne 200 ];
+then
+        echo " unsucessful connection due to $https_status "
+else
+        echo " sucessful connection due to $https_status "
+fi
+echo
+echo
+echo
+echo
+
+
+--------------------------------------------------------------------
+
+
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ cat GuviText.txt 
+This is the first line.
+This is the second line.
+Welcome to the third line.
+This is the fourth line.
+Welcome to the fifth line. Please give us a moment.
+This is the sixth line.
+give us a chance to welcome you in the seventh line.
+
+ubuntu@ip-172-31-45-118:~$ bash TestReplace.sh 
+
+
+
+ Hello we are going to replace the word given with learning 
+
+
+
+This is the first line.
+This is the second line.
+learning to the third line.
+This is the fourth line.
+learning to the fifth line. Please learning us a moment.
+This is the sixth line.
+learning us a chance to learning you in the seventh line.
+
+
+
+ replace completed 
+
+
+ubuntu@ip-172-31-45-118:~$ date
+Fri Nov 22 01:24:02 UTC 2024
+ubuntu@ip-172-31-45-118:~$ 
+ubuntu@ip-172-31-45-118:~$ cat HTTP_Error.sh 
+#! /bin/bash
+
+
+echo
+echo " Name of the script is $0:"
+echo
+echo
+url=$1
+https_status=$(curl -s -o /dev/null -w "%{http_code}" "$url")
+echo
+echo
+echo
+echo " checking the https status "
+echo
+echo
+if [ $https_status -ne 200 ];
+then
+        echo " unsucessful connection due to $https_status "
+else
+        echo " sucessful connection due to $https_status "
+fi
+echo
+echo
+echo
+echo
