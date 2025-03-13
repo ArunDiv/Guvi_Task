@@ -1,0 +1,958 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2025.03.13 20:40:51 =~=~=~=~=~=~=~=~=~=~=~=
+
+ubuntu@ip-172-31-84-200:~$ 
+ubuntu@ip-172-31-84-200:~$ 
+ubuntu@ip-172-31-84-200:~$ 
+ubuntu@ip-172-31-84-200:~$ 
+ubuntu@ip-172-31-84-200:~$ date
+Thu Mar 13 15:10:55 UTC 2025
+ubuntu@ip-172-31-84-200:~$ 
+ubuntu@ip-172-31-84-200:~$ 
+ubuntu@ip-172-31-84-200:~$ sudo apt update
+0% [Working]            Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble InRelease
+0% [Connecting to security.ubuntu.com (91.189.91.81)]                                                     Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+                                                     Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+                                                     Get:4 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+0% [3 InRelease 96.5 kB/126 kB 76%] [4 InRelease 25.8 kB/126 kB 20%]                                                                    0% [4 InRelease 25.8 kB/126 kB 20%]                                   0% [Working]0% [Working]            Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 Packages [15.0 MB]
+0% [5 Packages 18.6 kB/15.0 MB 0%]0% [5 Packages 5581 kB/15.0 MB 37%]0% [5 Packages 10.6 MB/15.0 MB 71%]50% [5 Packages 15.0 MB/15.0 MB 100%]                                     Get:6 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [670 kB]
+50% [5 Packages 15.0 MB/15.0 MB 100%] [6 Packages 15.7 kB/670 kB 2%]                                                                    50% [6 Packages 68.4 kB/670 kB 10%]50% [5 Packages store 0 B] [Waiting for headers] [6 Packages 74.3 kB/670 kB 11%]                                                                                Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe Translation-en [5982 kB]
+50% [5 Packages store 0 B] [7 Translation-en 110 kB/5982 kB 2%] [6 Packages 83.0 kB/670 kB 12%]                                                                                               65% [5 Packages store 0 B] [6 Packages 417 kB/670 kB 62%]                                                         Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 Components [3871 kB]
+66% [5 Packages store 0 B] [8 Components-amd64 91.6 kB/3871 kB 2%] [6 Packages 425 kB/670 kB 64%]                                                                                                 75% [5 Packages store 0 B] [6 Packages 651 kB/670 kB 97%]                                                         Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 c-n-f Metadata [301 kB]
+76% [5 Packages store 0 B] [9 Commands-amd64 108 kB/301 kB 36%] [6 Packages 660 kB/670 kB 99%]                                                                                              76% [5 Packages store 0 B] [9 Commands-amd64 239 kB/301 kB 79%]                                                               Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [269 kB]
+76% [5 Packages store 0 B] [10 Packages 68.5 kB/269 kB 25%] [Waiting for headers]                                                                                 Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse Translation-en [118 kB]
+77% [5 Packages store 0 B] [11 Translation-en 105 kB/118 kB 89%] [Waiting for headers]                                                                                      Get:12 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [128 kB]
+77% [5 Packages store 0 B] [11 Translation-en 105 kB/118 kB 89%] [12 Translation-en 0 B/128 kB 0%]                                                                                                  77% [5 Packages store 0 B] [12 Translation-en 2657 B/128 kB 2%]                                                               Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse amd64 Components [35.0 kB]
+77% [5 Packages store 0 B] [13 Components-amd64 0 B/35.0 kB 0%] [12 Translation-en 7001 B/128 kB 5%]                                                                                                    77% [5 Packages store 0 B] [12 Translation-en 9897 B/128 kB 8%]                                                               Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse amd64 c-n-f Metadata [8328 B]
+                                                               Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [919 kB]
+78% [5 Packages store 0 B] [15 Packages 98.3 kB/919 kB 11%] [12 Translation-en 18.6 kB/128 kB 15%]                                                                                                  80% [5 Packages store 0 B] [12 Translation-en 70.7 kB/128 kB 55%]                                                                 Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [206 kB]
+80% [5 Packages store 0 B] [16 Translation-en 129 kB/206 kB 63%] [12 Translation-en 76.5 kB/128 kB 60%]                                                                                                       80% [5 Packages store 0 B] [12 Translation-en 76.5 kB/128 kB 60%]                                                                 Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [151 kB]
+81% [5 Packages store 0 B] [17 Components-amd64 151 kB/151 kB 100%] [12 Translation-en 82.3 kB/128 kB 64                                                                                                        81% [5 Packages store 0 B] [12 Translation-en 91.0 kB/128 kB 71%]                                                                 Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1037 kB]
+81% [5 Packages store 0 B] [18 Packages 0 B/1037 kB 0%] [12 Translation-en 91.0 kB/128 kB 71%]                                                                                              Get:19 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [8964 B]
+82% [5 Packages store 0 B] [18 Packages 624 kB/1037 kB 60%] [19 Components-amd64 245 B/8964 B 3%]                                                                                                 Get:20 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [819 kB]
+                                                                                                 83% [5 Packages store 0 B] [18 Packages 821 kB/1037 kB 79%] [20 Packages 2626 B/819 kB 0%]                                                                                          83% [5 Packages store 0 B] [20 Packages 18.8 kB/819 kB 2%]                                                          Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [261 kB]
+83% [5 Packages store 0 B] [21 Translation-en 0 B/261 kB 0%] [20 Packages 24.3 kB/819 kB 3%]                                                                                            84% [5 Packages store 0 B] [20 Packages 33.0 kB/819 kB 4%]                                                          Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [364 kB]
+84% [5 Packages store 0 B] [22 Components-amd64 176 kB/364 kB 48%] [20 Packages 44.6 kB/819 kB 5%]                                                                                                  85% [5 Packages store 0 B] [20 Packages 60.5 kB/819 kB 7%]                                                          Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [19.9 kB]
+85% [5 Packages store 0 B] [23 Commands-amd64 18.8 kB/19.9 kB 95%] [20 Packages 66.3 kB/819 kB 8%]                                                                                                  85% [5 Packages store 0 B] [20 Packages 66.3 kB/819 kB 8%]                                                          Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [759 kB]
+85% [5 Packages store 0 B] [24 Packages 187 kB/759 kB 25%] [20 Packages 75.0 kB/819 kB 9%]                                                                                          87% [5 Packages store 0 B] [20 Packages 105 kB/819 kB 13%]                                                          Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [152 kB]
+87% [5 Packages store 0 B] [25 Translation-en 17.1 kB/152 kB 11%] [20 Packages 108 kB/819 kB 13%]                                                                                                 87% [5 Packages store 0 B] [20 Packages 130 kB/819 kB 16%]                                                          Get:26 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+87% [5 Packages store 0 B] [26 Components-amd64 0 B/212 B 0%] [20 Packages 130 kB/819 kB 16%]                                                                                             87% [5 Packages store 0 B] [20 Packages 133 kB/819 kB 16%]                                                          Get:27 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [30.1 kB]
+87% [5 Packages store 0 B] [27 Packages 0 B/30.1 kB 0%] [20 Packages 133 kB/819 kB 16%]                                                                                       87% [5 Packages store 0 B] [20 Packages 136 kB/819 kB 17%]                                                          Get:28 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [5884 B]
+87% [5 Packages store 0 B] [28 Translation-en 5884 B/5884 B 100%] [20 Packages 142 kB/819 kB 17%]                                                                                                 87% [5 Packages store 0 B] [20 Packages 142 kB/819 kB 17%]                                                          Get:29 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+88% [5 Packages store 0 B] [29 Components-amd64 0 B/940 B 0%] [20 Packages 146 kB/819 kB 18%]                                                                                             88% [5 Packages store 0 B] [20 Packages 149 kB/819 kB 18%]                                                          Get:30 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 c-n-f Metadata [552 B]
+                                                          Get:31 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [208 B]
+                                                          Get:32 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/main amd64 c-n-f Metadata [112 B]
+                                                          Get:33 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [14.2 kB]
+                                                          Get:34 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [12.1 kB]
+                                                          Get:35 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [20.0 kB]
+88% [5 Packages store 0 B] [Waiting for headers] [20 Packages 153 kB/819 kB 19%]                                                                                Get:36 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1104 B]
+                                                                                Get:37 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+88% [5 Packages store 0 B] [Waiting for headers] [20 Packages 159 kB/819 kB 19%]                                                                                Get:38 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 c-n-f Metadata [116 B]
+88% [5 Packages store 0 B] [Waiting for headers] [20 Packages 162 kB/819 kB 20%]                                                                                Get:39 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+88% [5 Packages store 0 B] [39 Components-amd64 0 B/212 B 0%] [20 Packages 165 kB/819 kB 20%]                                                                                             Get:40 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 c-n-f Metadata [116 B]
+                                                                                             88% [5 Packages store 0 B] [20 Packages 173 kB/819 kB 21%]                                                          89% [5 Packages store 0 B]                          Get:41 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [177 kB]
+89% [5 Packages store 0 B] [41 Translation-en 7559 B/177 kB 4%]                                                               90% [5 Packages store 0 B]                          Get:42 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [51.9 kB]
+90% [5 Packages store 0 B] [42 Components-amd64 4558 B/51.9 kB 9%]                                                                  Get:43 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [13.5 kB]
+                                                                  90% [5 Packages store 0 B] [43 Commands-amd64 3069 B/13.5 kB 23%]                                                                 Get:44 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [726 kB]
+                                                                 90% [5 Packages store 0 B] [44 Packages 8106 B/726 kB 1%]                                                         Get:45 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [145 kB]
+92% [5 Packages store 0 B] [45 Translation-en 3051 B/145 kB 2%]                                                               92% [5 Packages store 0 B]                          Get:46 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [208 B]
+                          Get:47 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [26.2 kB]
+                          Get:48 http://security.ubuntu.com/ubuntu noble-security/multiverse Translation-en [4892 B]
+92% [5 Packages store 0 B] [48 Translation-en 417 B/4892 B 9%]                                                              Get:49 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+                                                              Get:50 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 c-n-f Metadata [356 B]
+                                                              92% [5 Packages store 0 B]92% [5 Packages store 0 B]92% [5 Packages store 0 B]                          92% [Working]92% [7 Translation-en store 0 B]92% [7 Translation-en store 0 B]                                92% [Working]92% [8 Components-amd64 store 0 B]92% [8 Components-amd64 store 0 B]92% [8 Components-amd64 store 0 B]                                  93% [Working]93% [6 Packages store 0 B]                          93% [Working]93% [9 Commands-amd64 store 0 B]                                93% [Working]93% [10 Packages store 0 B]                           93% [Working]93% [11 Translation-en store 0 B]                                 93% [Working]93% [13 Components-amd64 store 0 B]                                   93% [Working]93% [14 Commands-amd64 store 0 B]                                 94% [Working]94% [15 Packages store 0 B]                           94% [Working]94% [16 Translation-en store 0 B]                                 94% [Working]94% [17 Components-amd64 store 0 B]                                   94% [Working]94% [12 Translation-en store 0 B]                                 94% [Working]94% [19 Components-amd64 store 0 B]                                   94% [Working]94% [18 Packages store 0 B]                           95% [Working]95% [21 Translation-en store 0 B]                                 95% [Working]95% [22 Components-amd64 store 0 B]                                   95% [Working]95% [23 Commands-amd64 store 0 B]                                 95% [Working]95% [24 Packages store 0 B]                           95% [Working]95% [25 Translation-en store 0 B]                                 96% [Working]96% [26 Components-amd64 store 0 B]                                   96% [Working]96% [27 Packages store 0 B]                           96% [Working]96% [28 Translation-en store 0 B]                                 96% [Working]96% [Working]96% [30 Commands-amd64 store 0 B]                                 96% [Working]97% [Working]97% [32 Commands-amd64 store 0 B]                                 97% [Working]97% [33 Packages store 0 B]                           97% [Working]97% [34 Translation-en store 0 B]                                 97% [Working]97% [35 Components-amd64 store 0 B]                                   97% [Working]97% [36 Commands-amd64 store 0 B]                                 97% [Working]97% [37 Components-amd64 store 0 B]                                   98% [Working]98% [38 Commands-amd64 store 0 B]                                 98% [Working]98% [39 Components-amd64 store 0 B]                                   98% [Working]98% [Working]98% [20 Packages store 0 B]                           98% [Working]98% [41 Translation-en store 0 B]                                 98% [Working]98% [42 Components-amd64 store 0 B]                                   99% [Working]99% [43 Commands-amd64 store 0 B]                                 99% [Working]99% [44 Packages store 0 B]99% [Working]                                                                               5410 kB/s 0s99% [45 Translation-en store 0 B]                                                           5410 kB/s 0s99% [Working]                                                                               5410 kB/s 0s99% [46 Components-amd64 store 0 B]                                                         5410 kB/s 0s99% [Working]                                                                               5410 kB/s 0s99% [47 Packages store 0 B]                                                                 5410 kB/s 0s99% [Working]                                                                               5410 kB/s 0s99% [48 Translation-en store 0 B]                                                           5410 kB/s 0s100% [Working]                                                                              5410 kB/s 0s100% [49 Components-amd64 store 0 B]                                                        5410 kB/s 0s100% [Working]                                                                              5410 kB/s 0s100% [Working]                                                                              5410 kB/s 0s                                                                                                        Fetched 32.7 MB in 6s (5373 kB/s)
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 4%Reading package lists... 4%Reading package lists... 6%Reading package lists... 6%Reading package lists... 51%Reading package lists... 51%Reading package lists... 70%Reading package lists... 70%Reading package lists... 71%Reading package lists... 71%Reading package lists... 71%Reading package lists... 71%Reading package lists... 72%Reading package lists... 72%Reading package lists... 72%Reading package lists... 72%Reading package lists... 75%Reading package lists... 75%Reading package lists... 75%Reading package lists... 77%Reading package lists... 77%Reading package lists... 81%Reading package lists... 81%Reading package lists... 82%Reading package lists... 82%Reading package lists... 85%Reading package lists... 85%Reading package lists... 86%Reading package lists... 86%Reading package lists... 87%Reading package lists... 87%Reading package lists... 87%Reading package lists... 87%Reading package lists... 87%Reading package lists... 87%Reading package lists... 87%Reading package lists... 87%Reading package lists... 89%Reading package lists... 89%Reading package lists... 90%Reading package lists... 90%Reading package lists... 94%Reading package lists... 94%Reading package lists... 95%Reading package lists... 95%Reading package lists... 97%Reading package lists... 97%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+140 packages can be upgraded. Run 'apt list --upgradable' to see them.
+ubuntu@ip-172-31-84-200:~$ 
+ubuntu@ip-172-31-84-200:~$ 
+ubuntu@ip-172-31-84-200:~$ 
+ubuntu@ip-172-31-84-200:~$ 
+ubuntu@ip-172-31-84-200:~$ ssudo su -
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# dockerapt docker.ipidocker.ipndocker.ipsdocker.iptdocker.ipadocker.ipldocker.ipldocker.ip docker.ip
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+E: Unable to locate package docker.ip
+E: Couldn't find any package by glob 'docker.ip'
+root@ip-172-31-84-200:~# apt install docker.ip0o
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+The following additional packages will be installed:
+  bridge-utils containerd dns-root-data dnsmasq-base pigz runc ubuntu-fan
+Suggested packages:
+  ifupdown aufs-tools cgroupfs-mount | cgroup-lite debootstrap docker-buildx docker-compose-v2
+  docker-doc rinse zfs-fuse | zfsutils
+The following NEW packages will be installed:
+  bridge-utils containerd dns-root-data dnsmasq-base docker.io pigz runc ubuntu-fan
+0 upgraded, 8 newly installed, 0 to remove and 140 not upgraded.
+Need to get 78.6 MB of archives.
+After this operation, 302 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+0% [Working]            Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 pigz amd64 2.8-1 [65.6 kB]
+0% [1 pigz 13.7 kB/65.6 kB 21%]                               3% [Waiting for headers]                        Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 bridge-utils amd64 1.7.1-1ubuntu2 [33.9 kB]
+3% [2 bridge-utils 26.1 kB/33.9 kB 77%]                                       5% [Waiting for headers]                        Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 runc amd64 1.1.12-0ubuntu3.1 [8599 kB]
+5% [3 runc 6467 B/8599 kB 0%]                             Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 containerd amd64 1.7.24-0ubuntu1~24.04.1 [37.0 MB]
+17% [4 containerd 146 kB/37.0 MB 0%]                                    57% [Working]             Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 dns-root-data all 2024071801~ubuntu0.24.04.1 [5918 B]
+57% [5 dns-root-data 0 B/5918 B 0%]                                   59% [Working]             Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 dnsmasq-base amd64 2.90-2build2 [375 kB]
+59% [6 dnsmasq-base 0 B/375 kB 0%]                                  62% [Working]             Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 docker.io amd64 26.1.3-0ubuntu1~24.04.1 [32.4 MB]
+62% [7 docker.io 0 B/32.4 MB 0%]                                97% [Working]             Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 ubuntu-fan all 0.12.16 [35.2 kB]
+100% [Working]              Fetched 78.6 MB in 1s (82.7 MB/s)
+Preconfiguring packages ...
+
+Selecting previously unselected package pigz.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 70610 files and directories currently installed.)
+Preparing to unpack .../0-pigz_2.8-1_amd64.deb ...
+Progress: [  0%] [...................................................................................] Progress: [  3%] [##.................................................................................] Unpacking pigz (2.8-1) ...
+Progress: [  6%] [#####..............................................................................] Selecting previously unselected package bridge-utils.
+Preparing to unpack .../1-bridge-utils_1.7.1-1ubuntu2_amd64.deb ...
+Progress: [  9%] [#######............................................................................] Unpacking bridge-utils (1.7.1-1ubuntu2) ...
+Progress: [ 12%] [##########.........................................................................] Selecting previously unselected package runc.
+Preparing to unpack .../2-runc_1.1.12-0ubuntu3.1_amd64.deb ...
+Progress: [ 15%] [############.......................................................................] Unpacking runc (1.1.12-0ubuntu3.1) ...
+Progress: [ 18%] [###############....................................................................] Selecting previously unselected package containerd.
+Preparing to unpack .../3-containerd_1.7.24-0ubuntu1~24.04.1_amd64.deb ...
+Progress: [ 21%] [#################..................................................................] Unpacking containerd (1.7.24-0ubuntu1~24.04.1) ...
+Progress: [ 24%] [####################...............................................................] Selecting previously unselected package dns-root-data.
+Preparing to unpack .../4-dns-root-data_2024071801~ubuntu0.24.04.1_all.deb ...
+Progress: [ 27%] [######################.............................................................] Unpacking dns-root-data (2024071801~ubuntu0.24.04.1) ...
+Progress: [ 30%] [#########################..........................................................] Selecting previously unselected package dnsmasq-base.
+Preparing to unpack .../5-dnsmasq-base_2.90-2build2_amd64.deb ...
+Progress: [ 33%] [###########################........................................................] Unpacking dnsmasq-base (2.90-2build2) ...
+Progress: [ 36%] [##############################.....................................................] Selecting previously unselected package docker.io.
+Preparing to unpack .../6-docker.io_26.1.3-0ubuntu1~24.04.1_amd64.deb ...
+Progress: [ 39%] [################################...................................................] Unpacking docker.io (26.1.3-0ubuntu1~24.04.1) ...
+Progress: [ 42%] [###################################................................................] Selecting previously unselected package ubuntu-fan.
+Preparing to unpack .../7-ubuntu-fan_0.12.16_all.deb ...
+Progress: [ 45%] [#####################################..............................................] Unpacking ubuntu-fan (0.12.16) ...
+Progress: [ 48%] [########################################...........................................] Setting up dnsmasq-base (2.90-2build2) ...
+Progress: [ 52%] [##########################################.........................................] Progress: [ 55%] [#############################################......................................] Setting up runc (1.1.12-0ubuntu3.1) ...
+Progress: [ 58%] [###############################################....................................] Progress: [ 61%] [##################################################.................................] Setting up dns-root-data (2024071801~ubuntu0.24.04.1) ...
+Progress: [ 64%] [####################################################...............................] Progress: [ 67%] [#######################################################............................] Setting up bridge-utils (1.7.1-1ubuntu2) ...
+Progress: [ 70%] [#########################################################..........................] Progress: [ 73%] [############################################################.......................] Setting up pigz (2.8-1) ...
+Progress: [ 76%] [##############################################################.....................] Progress: [ 79%] [#################################################################..................] Setting up containerd (1.7.24-0ubuntu1~24.04.1) ...
+Progress: [ 82%] [###################################################################................] Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service  /usr/lib/systemd/system/containerd.service.
+Progress: [ 85%] [######################################################################.............] Setting up ubuntu-fan (0.12.16) ...
+Progress: [ 88%] [########################################################################...........] Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service  /usr/lib/systemd/system/ubuntu-fan.service.
+Progress: [ 91%] [###########################################################################........] Setting up docker.io (26.1.3-0ubuntu1~24.04.1) ...
+Progress: [ 94%] [#############################################################################......] info: Selecting GID from range 100 to 999 ...
+info: Adding group `docker' (GID 113) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service  /usr/lib/systemd/system/docker.service.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket  /usr/lib/systemd/system/docker.socket.
+Progress: [ 97%] [################################################################################...] Processing triggers for dbus (1.14.10-4ubuntu4.1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+
+Scanning processes... [                                                                                 ]Scanning processes... [                                                                                 ]Scanning processes... [=                                                                                ]Scanning processes... [==                                                                               ]Scanning processes... [==                                                                               ]Scanning processes... [===                                                                              ]Scanning processes... [====                                                                             ]Scanning processes... [====                                                                             ]Scanning processes... [=====                                                                            ]Scanning processes... [======                                                                           ]Scanning processes... [======                                                                           ]Scanning processes... [=======                                                                          ]Scanning processes... [========                                                                         ]Scanning processes... [=========                                                                        ]Scanning processes... [=========                                                                        ]Scanning processes... [==========                                                                       ]Scanning processes... [===========                                                                      ]Scanning processes... [===========                                                                      ]Scanning processes... [============                                                                     ]Scanning processes... [=============                                                                    ]Scanning processes... [=============                                                                    ]Scanning processes... [==============                                                                   ]Scanning processes... [===============                                                                  ]Scanning processes... [===============                                                                  ]Scanning processes... [================                                                                 ]Scanning processes... [=================                                                                ]Scanning processes... [==================                                                               ]Scanning processes... [==================                                                               ]Scanning processes... [===================                                                              ]Scanning processes... [====================                                                             ]Scanning processes... [====================                                                             ]Scanning processes... [=====================                                                            ]Scanning processes... [======================                                                           ]Scanning processes... [======================                                                           ]Scanning processes... [=======================                                                          ]Scanning processes... [========================                                                         ]Scanning processes... [========================                                                         ]Scanning processes... [=========================                                                        ]Scanning processes... [==========================                                                       ]Scanning processes... [===========================                                                      ]Scanning processes... [===========================                                                      ]Scanning processes... [============================                                                     ]Scanning processes... [=============================                                                    ]Scanning processes... [=============================                                                    ]Scanning processes... [==============================                                                   ]Scanning processes... [===============================                                                  ]Scanning processes... [===============================                                                  ]Scanning processes... [================================                                                 ]Scanning processes... [=================================                                                ]Scanning processes... [=================================                                                ]Scanning processes... [==================================                                               ]Scanning processes... [===================================                                              ]Scanning processes... [====================================                                             ]Scanning processes... [====================================                                             ]Scanning processes... [=====================================                                            ]Scanning processes... [======================================                                           ]Scanning processes... [======================================                                           ]Scanning processes... [=======================================                                          ]Scanning processes... [========================================                                         ]Scanning processes... [========================================                                         ]Scanning processes... [=========================================                                        ]Scanning processes... [==========================================                                       ]Scanning processes... [==========================================                                       ]Scanning processes... [===========================================                                      ]Scanning processes... [============================================                                     ]Scanning processes... [=============================================                                    ]Scanning processes... [=============================================                                    ]Scanning processes... [==============================================                                   ]Scanning processes... [===============================================                                  ]Scanning processes... [===============================================                                  ]Scanning processes... [================================================                                 ]Scanning processes... [=================================================                                ]Scanning processes... [=================================================                                ]Scanning processes... [==================================================                               ]Scanning processes... [===================================================                              ]Scanning processes... [===================================================                              ]Scanning processes... [====================================================                             ]Scanning processes... [=====================================================                            ]Scanning processes... [======================================================                           ]Scanning processes... [======================================================                           ]Scanning processes... [=======================================================                          ]Scanning processes... [========================================================                         ]Scanning processes... [========================================================                         ]Scanning processes... [=========================================================                        ]Scanning processes... [==========================================================                       ]Scanning processes... [==========================================================                       ]Scanning processes... [===========================================================                      ]Scanning processes... [============================================================                     ]Scanning processes... [============================================================                     ]Scanning processes... [=============================================================                    ]Scanning processes... [==============================================================                   ]Scanning processes... [===============================================================                  ]Scanning processes... [===============================================================                  ]Scanning processes... [================================================================                 ]Scanning processes... [=================================================================                ]Scanning processes... [=================================================================                ]Scanning processes... [==================================================================               ]Scanning processes... [===================================================================              ]Scanning processes... [===================================================================              ]Scanning processes... [====================================================================             ]Scanning processes... [=====================================================================            ]Scanning processes... [=====================================================================            ]Scanning processes... [======================================================================           ]Scanning processes... [=======================================================================          ]Scanning processes... [========================================================================         ]Scanning processes... [========================================================================         ]Scanning processes... [=========================================================================        ]Scanning processes... [==========================================================================       ]Scanning processes... [==========================================================================       ]Scanning processes... [===========================================================================      ]Scanning processes... [============================================================================     ]Scanning processes... [============================================================================     ]Scanning processes... [=============================================================================    ]Scanning processes... [==============================================================================   ]Scanning processes... [==============================================================================   ]Scanning processes... [===============================================================================  ]Scanning processes... [================================================================================ ]Scanning processes... [=================================================================================]Scanning processes...                                                                                    
+Scanning linux images... [                                                                              ]Scanning linux images... [==========================                                                    ]Scanning linux images... [====================================================                          ]Scanning linux images... [==============================================================================]Scanning linux images...                                                                                 
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker psimages
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docekerdocker pull thhttpd
+Using default tag: latest
+latest: Pulling from library/httpd
+
+7cf63256a31a: Pulling fs layer 
+d2f10b557009: Pulling fs layer 
+4f4fb700ef54: Pulling fs layer 
+38fd0d422c41: Pulling fs layer 
+470035b3d48f: Pulling fs layer 
+fdebd6c6e1b2: Pulling fs layer 38fd0d422c41: Waiting 470035b3d48f: Waiting fdebd6c6e1b2: Waiting 7cf63256a31a: Downloading  285.2kB/28.22MBd2f10b557009: Downloading     145B/145Bd2f10b557009: Verifying Checksum d2f10b557009: Download complete 4f4fb700ef54: Downloading      32B/32B4f4fb700ef54: Verifying Checksum 4f4fb700ef54: Download complete 7cf63256a31a: Downloading  12.06MB/28.22MB38fd0d422c41: Downloading  50.67kB/4.201MB470035b3d48f: Downloading    277kB/26.06MB7cf63256a31a: Downloading  21.67MB/28.22MB38fd0d422c41: Downloading  416.2kB/4.201MB470035b3d48f: Downloading  6.044MB/26.06MB7cf63256a31a: Downloading  27.86MB/28.22MB7cf63256a31a: Verifying Checksum 7cf63256a31a: Download complete 38fd0d422c41: Downloading  677.4kB/4.201MB470035b3d48f: Downloading  12.86MB/26.06MB7cf63256a31a: Extracting  294.9kB/28.22MB470035b3d48f: Downloading  23.87MB/26.06MBfdebd6c6e1b2: Downloading     294B/294Bfdebd6c6e1b2: Verifying Checksum 38fd0d422c41: Downloading  1.304MB/4.201MBfdebd6c6e1b2: Download complete 470035b3d48f: Verifying Checksum 470035b3d48f: Download complete 7cf63256a31a: Extracting  589.8kB/28.22MB38fd0d422c41: Verifying Checksum 38fd0d422c41: Download complete 7cf63256a31a: Extracting  2.654MB/28.22MB7cf63256a31a: Extracting  5.014MB/28.22MB7cf63256a31a: Extracting  7.668MB/28.22MB7cf63256a31a: Extracting  9.732MB/28.22MB7cf63256a31a: Extracting   11.8MB/28.22MB7cf63256a31a: Extracting  15.04MB/28.22MB7cf63256a31a: Extracting  18.58MB/28.22MB7cf63256a31a: Extracting  21.53MB/28.22MB7cf63256a31a: Extracting  23.89MB/28.22MB7cf63256a31a: Extracting  25.95MB/28.22MB7cf63256a31a: Extracting  27.13MB/28.22MB7cf63256a31a: Extracting  27.43MB/28.22MB7cf63256a31a: Extracting  28.22MB/28.22MB7cf63256a31a: Pull complete d2f10b557009: Extracting     145B/145Bd2f10b557009: Extracting     145B/145Bd2f10b557009: Pull complete 4f4fb700ef54: Extracting      32B/32B4f4fb700ef54: Extracting      32B/32B4f4fb700ef54: Pull complete 38fd0d422c41: Extracting  65.54kB/4.201MB38fd0d422c41: Extracting   2.49MB/4.201MB38fd0d422c41: Extracting  4.201MB/4.201MB38fd0d422c41: Pull complete 470035b3d48f: Extracting  262.1kB/26.06MB470035b3d48f: Extracting  4.194MB/26.06MB470035b3d48f: Extracting  7.864MB/26.06MB470035b3d48f: Extracting  11.01MB/26.06MB470035b3d48f: Extracting  13.63MB/26.06MB470035b3d48f: Extracting  16.52MB/26.06MB470035b3d48f: Extracting  19.66MB/26.06MB470035b3d48f: Extracting  21.23MB/26.06MB470035b3d48f: Extracting  24.38MB/26.06MB470035b3d48f: Extracting  26.06MB/26.06MB470035b3d48f: Pull complete fdebd6c6e1b2: Extracting     294B/294Bfdebd6c6e1b2: Extracting     294B/294Bfdebd6c6e1b2: Pull complete Digest: sha256:10381816bb7e60ae3a9db3784f2966a8910b6ff07c4da54bd2d62d2671c8ab6e
+Status: Downloaded newer image for httpd:latest
+docker.io/library/httpd:latest
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker pull httpdimages
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+httpd        latest    0de612e99135   6 weeks ago   148MB
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker run -yt webserver -p ""8"0"8"0":"8"0" htthttpd
+Unable to find image 'webserver:latest' locally
+docker: Error response from daemon: pull access denied for webserver, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker run -t webserver -p "8080:80" httpdidttd -p "8080:80" httpd 
+7109c1fbaed9dae6fcc16b85148fcaa6c03b2f90441a12ae0ac58f5a25fbd193
+
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker exec -tdit docker ps
+CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          PORTS                                   NAMES
+7109c1fbaed9   httpd     "httpd-foreground"   51 seconds ago   Up 48 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   romantic_mahavira
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker -it  exec7109c1fbaed97109c1fbaed9
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Execute a command in a running container
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker exec -it 7109c1fbaed9 /bin/bash
+root@7109c1fbaed9:/usr/local/apache2# 
+root@7109c1fbaed9:/usr/local/apache2# 
+root@7109c1fbaed9:/usr/local/apache2# ls -lrt
+total 40
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 modules
+drwxr-xr-x 3 root root 4096 Feb 25 02:17 icons
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 htdocs
+drwxr-xr-x 3 root root 4096 Feb 25 02:17 error
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 cgi-bin
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 include
+drwxr-xr-x 4 root root 4096 Feb 25 02:17 conf
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 build
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 bin
+drwxr-xr-x 1 root root 4096 Mar 13 15:17 logs
+root@7109c1fbaed9:/usr/local/apache2# 
+root@7109c1fbaed9:/usr/local/apache2# 
+root@7109c1fbaed9:/usr/local/apache2# exit
+exit
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker ps -a
+CONTAINER ID   IMAGE     COMMAND              CREATED         STATUS         PORTS                                   NAMES
+7109c1fbaed9   httpd     "httpd-foreground"   2 minutes ago   Up 2 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   romantic_mahavira
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# dockerdocker ps 
+CONTAINER ID   IMAGE     COMMAND              CREATED         STATUS         PORTS                                   NAMES
+7109c1fbaed9   httpd     "httpd-foreground"   2 minutes ago   Up 2 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   romantic_mahavira
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker stop 7109c1fbaed97109c1fbaed9
+7109c1fbaed9
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker stop 7109c1fbaed9ps 
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker ps stop 7109c1fbaed9ps -a
+CONTAINER ID   IMAGE     COMMAND              CREATED         STATUS                      PORTS     NAMES
+7109c1fbaed9   httpd     "httpd-foreground"   3 minutes ago   Exited (0) 18 seconds ago             romantic_mahavira
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker start 7109c1fbaed97109c1fbaed9
+7109c1fbaed9
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker start 7109c1fbaed9ps -a
+CONTAINER ID   IMAGE     COMMAND              CREATED         STATUS         PORTS                                   NAMES
+7109c1fbaed9   httpd     "httpd-foreground"   3 minutes ago   Up 5 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   romantic_mahavira
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# show hhosts
+Command 'hosts' not found, did you mean:
+  command 'host' from deb bind9-host (1:9.18.28-0ubuntu0.24.04.1)
+Try: apt install <deb name>
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# ifconnetstartat -luln
+Command 'netstat' not found, but can be installed with:
+apt install net-tools
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# apt install net-tollaols
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+The following NEW packages will be installed:
+  net-tools
+0 upgraded, 1 newly installed, 0 to remove and 140 not upgraded.
+Need to get 204 kB of archives.
+After this operation, 811 kB of additional disk space will be used.
+0% [Working]            Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 net-tools amd64 2.10-0.1ubuntu4 [204 kB]
+5% [1 net-tools 13.7 kB/204 kB 7%]                                  100% [Working]              Fetched 204 kB in 0s (5272 kB/s)
+
+Selecting previously unselected package net-tools.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 70977 files and directories currently installed.)
+Preparing to unpack .../net-tools_2.10-0.1ubuntu4_amd64.deb ...
+Progress: [  0%] [...................................................................................] Progress: [ 20%] [################...................................................................] Unpacking net-tools (2.10-0.1ubuntu4) ...
+Progress: [ 40%] [#################################..................................................] Setting up net-tools (2.10-0.1ubuntu4) ...
+Progress: [ 60%] [#################################################..................................] Progress: [ 80%] [##################################################################.................] Processing triggers for man-db (2.12.0-4build2) ...
+
+Scanning processes... [                                                                                 ]Scanning processes... [                                                                                 ]Scanning processes... [=                                                                                ]Scanning processes... [==                                                                               ]Scanning processes... [==                                                                               ]Scanning processes... [===                                                                              ]Scanning processes... [====                                                                             ]Scanning processes... [====                                                                             ]Scanning processes... [=====                                                                            ]Scanning processes... [======                                                                           ]Scanning processes... [======                                                                           ]Scanning processes... [=======                                                                          ]Scanning processes... [========                                                                         ]Scanning processes... [========                                                                         ]Scanning processes... [=========                                                                        ]Scanning processes... [==========                                                                       ]Scanning processes... [==========                                                                       ]Scanning processes... [===========                                                                      ]Scanning processes... [============                                                                     ]Scanning processes... [============                                                                     ]Scanning processes... [=============                                                                    ]Scanning processes... [==============                                                                   ]Scanning processes... [==============                                                                   ]Scanning processes... [===============                                                                  ]Scanning processes... [================                                                                 ]Scanning processes... [================                                                                 ]Scanning processes... [=================                                                                ]Scanning processes... [==================                                                               ]Scanning processes... [==================                                                               ]Scanning processes... [===================                                                              ]Scanning processes... [====================                                                             ]Scanning processes... [====================                                                             ]Scanning processes... [=====================                                                            ]Scanning processes... [======================                                                           ]Scanning processes... [======================                                                           ]Scanning processes... [=======================                                                          ]Scanning processes... [========================                                                         ]Scanning processes... [========================                                                         ]Scanning processes... [=========================                                                        ]Scanning processes... [==========================                                                       ]Scanning processes... [==========================                                                       ]Scanning processes... [===========================                                                      ]Scanning processes... [============================                                                     ]Scanning processes... [============================                                                     ]Scanning processes... [=============================                                                    ]Scanning processes... [==============================                                                   ]Scanning processes... [==============================                                                   ]Scanning processes... [===============================                                                  ]Scanning processes... [================================                                                 ]Scanning processes... [================================                                                 ]Scanning processes... [=================================                                                ]Scanning processes... [==================================                                               ]Scanning processes... [==================================                                               ]Scanning processes... [===================================                                              ]Scanning processes... [====================================                                             ]Scanning processes... [====================================                                             ]Scanning processes... [=====================================                                            ]Scanning processes... [======================================                                           ]Scanning processes... [======================================                                           ]Scanning processes... [=======================================                                          ]Scanning processes... [========================================                                         ]Scanning processes... [========================================                                         ]Scanning processes... [=========================================                                        ]Scanning processes... [==========================================                                       ]Scanning processes... [==========================================                                       ]Scanning processes... [===========================================                                      ]Scanning processes... [============================================                                     ]Scanning processes... [============================================                                     ]Scanning processes... [=============================================                                    ]Scanning processes... [==============================================                                   ]Scanning processes... [==============================================                                   ]Scanning processes... [===============================================                                  ]Scanning processes... [================================================                                 ]Scanning processes... [================================================                                 ]Scanning processes... [=================================================                                ]Scanning processes... [==================================================                               ]Scanning processes... [==================================================                               ]Scanning processes... [===================================================                              ]Scanning processes... [====================================================                             ]Scanning processes... [====================================================                             ]Scanning processes... [=====================================================                            ]Scanning processes... [======================================================                           ]Scanning processes... [======================================================                           ]Scanning processes... [=======================================================                          ]Scanning processes... [========================================================                         ]Scanning processes... [========================================================                         ]Scanning processes... [=========================================================                        ]Scanning processes... [==========================================================                       ]Scanning processes... [==========================================================                       ]Scanning processes... [===========================================================                      ]Scanning processes... [============================================================                     ]Scanning processes... [============================================================                     ]Scanning processes... [=============================================================                    ]Scanning processes... [==============================================================                   ]Scanning processes... [==============================================================                   ]Scanning processes... [===============================================================                  ]Scanning processes... [================================================================                 ]Scanning processes... [================================================================                 ]Scanning processes... [=================================================================                ]Scanning processes... [==================================================================               ]Scanning processes... [==================================================================               ]Scanning processes... [===================================================================              ]Scanning processes... [====================================================================             ]Scanning processes... [====================================================================             ]Scanning processes... [=====================================================================            ]Scanning processes... [======================================================================           ]Scanning processes... [======================================================================           ]Scanning processes... [=======================================================================          ]Scanning processes... [========================================================================         ]Scanning processes... [========================================================================         ]Scanning processes... [=========================================================================        ]Scanning processes... [==========================================================================       ]Scanning processes... [==========================================================================       ]Scanning processes... [===========================================================================      ]Scanning processes... [============================================================================     ]Scanning processes... [============================================================================     ]Scanning processes... [=============================================================================    ]Scanning processes... [==============================================================================   ]Scanning processes... [==============================================================================   ]Scanning processes... [===============================================================================  ]Scanning processes... [================================================================================ ]Scanning processes... [=================================================================================]Scanning processes...                                                                                    
+Scanning linux images... [                                                                              ]Scanning linux images... [==========================                                                    ]Scanning linux images... [====================================================                          ]Scanning linux images... [==============================================================================]Scanning linux images...                                                                                 
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# apt install net-toolsnetstat -luln
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+udp        0      0 172.31.84.200:68        0.0.0.0:*                          
+udp        0      0 127.0.0.1:323           0.0.0.0:*                          
+udp        0      0 127.0.0.54:53           0.0.0.0:*                          
+udp        0      0 127.0.0.53:53           0.0.0.0:*                          
+udp6       0      0 ::1:323                 :::*                               
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# netstat -luln
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+udp        0      0 172.31.84.200:68        0.0.0.0:*                          
+udp        0      0 127.0.0.1:323           0.0.0.0:*                          
+udp        0      0 127.0.0.54:53           0.0.0.0:*                          
+udp        0      0 127.0.0.53:53           0.0.0.0:*                          
+udp6       0      0 ::1:323                 :::*                               
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# ifconfig
+docker0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        inet6 fe80::42:7aff:fe7e:3b1b  prefixlen 64  scopeid 0x20<link>
+        ether 02:42:7a:7e:3b:1b  txqueuelen 0  (Ethernet)
+        RX packets 9  bytes 1120 (1.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 19  bytes 2286 (2.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enX0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 172.31.84.200  netmask 255.255.240.0  broadcast 172.31.95.255
+        inet6 fe80::108f:feff:fed0:886f  prefixlen 64  scopeid 0x20<link>
+        ether 12:8f:fe:d0:88:6f  txqueuelen 1000  (Ethernet)
+        RX packets 123155  bytes 176858541 (176.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 7742  bytes 810648 (810.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 252  bytes 32163 (32.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 252  bytes 32163 (32.1 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+veth07ffeff: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet6 fe80::7858:6dff:fedd:4949  prefixlen 64  scopeid 0x20<link>
+        ether 7a:58:6d:dd:49:49  txqueuelen 0  (Ethernet)
+        RX packets 9  bytes 1246 (1.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 25  bytes 2626 (2.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@ip-172-31-84-200:~# show hosts
+Command 'show' not found, but can be installed with:
+apt install mailutils-mh  # version 1:3.16-1build1, or
+apt install mmh           # version 0.4-6
+apt install nmh           # version 1.8-1
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# hoswho
+ubuntu   pts/0        2025-03-13 15:10 (122.164.83.211)
+ubuntu   pts/1        2025-03-13 15:11 (122.164.83.211)
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# sww
+ 15:26:06 up 18 min,  1 user,  load average: 0.10, 0.08, 0.05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU  WHAT
+ubuntu            122.164.83.211   15:10   13:45   0.00s   ?    sshd: ubuntu [priv]
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# hostname -I
+172.31.84.200 172.17.0.1 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# cutrl oifconfig.me
+34.238.123.140root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# curl ifconfig.mehostname -Iwhoshow hostifconfignetstat -lulntuln
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.54:53           0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:40167         0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN     
+tcp6       0      0 :::22                   :::*                    LISTEN     
+tcp6       0      0 :::8080                 :::*                    LISTEN     
+udp        0      0 172.31.84.200:68        0.0.0.0:*                          
+udp        0      0 127.0.0.1:323           0.0.0.0:*                          
+udp        0      0 127.0.0.54:53           0.0.0.0:*                          
+udp        0      0 127.0.0.53:53           0.0.0.0:*                          
+udp6       0      0 ::1:323                 :::*                               
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker volume
+
+Usage:  docker volume COMMAND
+
+Manage volumes
+
+Commands:
+  create      Create a volume
+  inspect     Display detailed information on one or more volumes
+  ls          List volumes
+  prune       Remove unused local volumes
+  rm          Remove one or more volumes
+
+Run 'docker volume COMMAND --help' for more information on a command.
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker create volume DOCKER_volume
+Unable to find image 'volume:latest' locally
+Error response from daemon: pull access denied for volume, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker create volume DOCKER_volumeck_vol
+Unable to find image 'volume:latest' locally
+Error response from daemon: pull access denied for volume, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+httpd        latest    0de612e99135   6 weeks ago   148MB
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker imagescreate volume Dck_vol0de612e991350de612e99135
+Unable to find image 'volume:latest' locally
+Error response from daemon: pull access denied for volume, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker create volume 0de612e99135https
+Unable to find image 'volume:latest' locally
+Error response from daemon: pull access denied for volume, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker create volume httpsd
+Unable to find image 'volume:latest' locally
+Error response from daemon: pull access denied for volume, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker create volume httpddocker volume ls
+DRIVER    VOLUME NAME
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker volume create my_volume
+my_volume
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker volume create my_volumels
+DRIVER    VOLUME NAME
+local     my_volume
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker volume lscreate my_volumelscreate volume httpd
+Unable to find image 'volume:latest' locally
+Error response from daemon: pull access denied for volume, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker ps
+CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          PORTS                                   NAMES
+7109c1fbaed9   httpd     "httpd-foreground"   19 minutes ago   Up 15 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   romantic_mahavira
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker run -idtd -v my_volume :/
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker exec -it 7109c1fbaed97109c1fbaed9 /bin/bash
+root@7109c1fbaed9:/usr/local/apache2# 
+root@7109c1fbaed9:/usr/local/apache2# 
+root@7109c1fbaed9:/usr/local/apache2# ls -lrt
+total 40
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 modules
+drwxr-xr-x 3 root root 4096 Feb 25 02:17 icons
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 htdocs
+drwxr-xr-x 3 root root 4096 Feb 25 02:17 error
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 cgi-bin
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 include
+drwxr-xr-x 4 root root 4096 Feb 25 02:17 conf
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 build
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 bin
+drwxr-xr-x 1 root root 4096 Mar 13 15:20 logs
+root@7109c1fbaed9:/usr/local/apache2# 
+root@7109c1fbaed9:/usr/local/apache2# 
+root@7109c1fbaed9:/usr/local/apache2# mkdir = -p include/my_space
+root@7109c1fbaed9:/usr/local/apache2# 
+root@7109c1fbaed9:/usr/local/apache2# exit
+exit
+root@ip-172-31-84-200:~# diockedocker volume run -d --name mycontainer -v my_volume : /mys_ssinclude/my_space httpsd
+392d1f15ee73dcabf253fe3b8e4a5d820c72ab9dac1d834aa48f4df1d8033059
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# cddocker exe -tdidtc -idt docker ps
+CONTAINER ID   IMAGE     COMMAND              CREATED              STATUS              PORTS                                   NAMES
+392d1f15ee73   httpd     "httpd-foreground"   About a minute ago   Up About a minute   80/tcp                                  mycontainer
+7109c1fbaed9   httpd     "httpd-foreground"   25 minutes ago       Up 21 minutes       0.0.0.0:8080->80/tcp, :::8080->80/tcp   romantic_mahavira
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker exec -it 392d1f15ee73392d1f15ee73 /bin/bash
+root@392d1f15ee73:/usr/local/apache2# 
+root@392d1f15ee73:/usr/local/apache2# 
+root@392d1f15ee73:/usr/local/apache2# ls -lrt
+total 40
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 modules
+drwxr-xr-x 3 root root 4096 Feb 25 02:17 icons
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 htdocs
+drwxr-xr-x 3 root root 4096 Feb 25 02:17 error
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 cgi-bin
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 include
+drwxr-xr-x 4 root root 4096 Feb 25 02:17 conf
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 build
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 bin
+drwxr-xr-x 1 root root 4096 Mar 13 15:40 logs
+root@392d1f15ee73:/usr/local/apache2# 
+root@392d1f15ee73:/usr/local/apache2# cd include/
+root@392d1f15ee73:/usr/local/apache2/include# ll
+bash: ll: command not found
+root@392d1f15ee73:/usr/local/apache2/include# ls
+ap_compat.h    ap_regkey.h        http_main.hmod_dbd.h   mod_status.h    util_ebcdic.h
+ap_config.h    ap_release.h       http_protocol.hmod_http2.h   mod_unixd.h   util_fcgi.h
+ap_config_auto.h    ap_slotmem.h       http_request.hmod_include.h   mod_watchdog.h  util_filter.h
+ap_config_layout.h  ap_socache.h       http_ssl.hmod_log_config.h   mod_xml2enc.h   util_ldap.h
+ap_expr.h    apache_noprobes.h  http_vhost.hmod_proxy.h   mpm_common.h    util_md5.h
+ap_hooks.h    cache_common.h     httpd.hmod_request.h   os.h   util_mutex.h
+ap_listen.h    heartbeat.h        mod_auth.hmod_rewrite.h   scoreboard.h    util_script.h
+ap_mmn.h    http_config.h      mod_cache.hmod_session.h   unixd.h   util_time.h
+ap_mpm.h    http_connection.h  mod_cgi.hmod_so.h   util_cfgtree.h  util_varbuf.h
+ap_provider.h    http_core.h        mod_core.hmod_ssl.h   util_charset.h  util_xml.h
+ap_regex.h    http_log.h       mod_dav.hmod_ssl_openssl.h  util_cookies.h
+root@392d1f15ee73:/usr/local/apache2/include# 
+root@392d1f15ee73:/usr/local/apache2/include# 
+root@392d1f15ee73:/usr/local/apache2/include# ls -lrt mys _space
+ls: cannot access 'my_space': No such file or directory
+root@392d1f15ee73:/usr/local/apache2/include# 
+root@392d1f15ee73:/usr/local/apache2/include# 
+root@392d1f15ee73:/usr/local/apache2/include# cd
+root@392d1f15ee73:~# 
+root@392d1f15ee73:~# 
+root@392d1f15ee73:~# ls -lrt
+total 0
+root@392d1f15ee73:~# 
+root@392d1f15ee73:~# 
+root@392d1f15ee73:~# 
+root@392d1f15ee73:~# ls -lrt
+total 0
+root@392d1f15ee73:~# 
+root@392d1f15ee73:~# 
+root@392d1f15ee73:~# exo it
+exit
+root@ip-172-31-84-200:~# docker exec -it 392d1f15ee73 /bin/bash
+root@392d1f15ee73:/usr/local/apache2# ls
+bin  build  cgi-bin  conf  error  htdocs  icons  include  logsmodules
+root@392d1f15ee73:/usr/local/apache2# find    
+root@392d1f15ee73:/usr/local/apache2# 
+root@392d1f15ee73:/usr/local/apache2# exit
+exit
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker lvolume ls
+DRIVER    VOLUME NAME
+local     my_volume
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker volume lsdocker run -itd -v my-volume:/app -p "9000:5000"docker run -itd -v my-volume:/app -p "9000:5000"_ https
+Unable to find image 'https:latest' locally
+docker: Error response from daemon: pull access denied for https, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker run -itd -v my_volume:/app -p "9000:5000" httpsd
+5fa57fd0dac29d77b04a1eb45ce7c742a6aa5ff712190e96a9e9458af247e75a
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# doceker ps
+CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          PORTS                                               NAMES
+5fa57fd0dac2   httpd     "httpd-foreground"   9 seconds ago    Up 8 seconds    80/tcp, 0.0.0.0:9000->5000/tcp, :::9000->5000/tcp   gracious_curran
+392d1f15ee73   httpd     "httpd-foreground"   5 minutes ago    Up 5 minutes    80/tcp                                              mycontainer
+7109c1fbaed9   httpd     "httpd-foreground"   29 minutes ago   Up 25 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp               romantic_mahavira
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker psrun -itd -v my_volume:/app -p "9000:5000" httpdsvolume lsexec -it 392d1f15ee73 /bin/bash5fa57fd0dac25fa57fd0dac2 /bin/bash
+root@5fa57fd0dac2:/usr/local/apache2# 
+root@5fa57fd0dac2:/usr/local/apache2# 
+root@5fa57fd0dac2:/usr/local/apache2# ls
+bin  build  cgi-bin  conf  error  htdocs  icons  include  logsmodules
+root@5fa57fd0dac2:/usr/local/apache2# ls -lrt
+total 40
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 modules
+drwxr-xr-x 3 root root 4096 Feb 25 02:17 icons
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 htdocs
+drwxr-xr-x 3 root root 4096 Feb 25 02:17 error
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 cgi-bin
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 include
+drwxr-xr-x 4 root root 4096 Feb 25 02:17 conf
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 build
+drwxr-xr-x 2 root root 4096 Feb 25 02:17 bin
+drwxr-xr-x 1 root root 4096 Mar 13 15:46 logs
+root@5fa57fd0dac2:/usr/local/apache2# 
+root@5fa57fd0dac2:/usr/local/apache2# 
+root@5fa57fd0dac2:/usr/local/apache2# cd /app/
+root@5fa57fd0dac2:/app# cd .. 
+root@5fa57fd0dac2:/app# 
+root@5fa57fd0dac2:/app# 
+root@5fa57fd0dac2:/app# cd ..
+root@5fa57fd0dac2:/# 
+root@5fa57fd0dac2:/# 
+root@5fa57fd0dac2:/# df -kh
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         6.8G  2.4G  4.4G  35% /
+tmpfs            64M     0   64M   0% /dev
+shm              64M     0   64M   0% /dev/shm
+/dev/root       6.8G  2.4G  4.4G  35% /app
+tmpfs           479M     0  479M   0% /proc/acpi
+tmpfs           479M     0  479M   0% /proc/scsi
+tmpfs           479M     0  479M   0% /sys/firmware
+root@5fa57fd0dac2:/# 
+root@5fa57fd0dac2:/# 
+root@5fa57fd0dac2:/# 
+root@5fa57fd0dac2:/# 
+root@5fa57fd0dac2:/# exit
+exit
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+133f881d00d1   bridge    bridge    local
+1e009035368b   host      host      local
+727db89469ff   none      null      local
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# docker ps
+CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          PORTS                                               NAMES
+5fa57fd0dac2   httpd     "httpd-foreground"   3 minutes ago    Up 3 minutes    80/tcp, 0.0.0.0:9000->5000/tcp, :::9000->5000/tcp   gracious_curran
+392d1f15ee73   httpd     "httpd-foreground"   8 minutes ago    Up 8 minutes    80/tcp                                              mycontainer
+7109c1fbaed9   httpd     "httpd-foreground"   32 minutes ago   Up 28 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp               romantic_mahavira
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# dockeris isnspect 5fa57fd0dac25fa57fd0dac2 bridge 
+[
+    {
+        "Name": "bridge",
+        "Id": "133f881d00d103fc3c309bc3c1695a9dcafb4289c5a9e083c6286ccd6b41d6f8",
+        "Created": "2025-03-13T15:12:14.243975668Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.17.0.0/16",
+                    "Gateway": "172.17.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {
+            "392d1f15ee73dcabf253fe3b8e4a5d820c72ab9dac1d834aa48f4df1d8033059": {
+                "Name": "mycontainer",
+                "EndpointID": "d308b201e7a99fd805a2291d7993ef107f2ed08f2d9422efbca2fa89f907be05",
+                "MacAddress": "02:42:ac:11:00:03",
+                "IPv4Address": "172.17.0.3/16",
+                "IPv6Address": ""
+            },
+            "5fa57fd0dac29d77b04a1eb45ce7c742a6aa5ff712190e96a9e9458af247e75a": {
+                "Name": "gracious_curran",
+                "EndpointID": "97e4fadf6e5272b2d1fec9fb51678e56b3e7ca94065037cd290fc04a941b6b7a",
+                "MacAddress": "02:42:ac:11:00:04",
+                "IPv4Address": "172.17.0.4/16",
+                "IPv6Address": ""
+            },
+            "7109c1fbaed9dae6fcc16b85148fcaa6c03b2f90441a12ae0ac58f5a25fbd193": {
+                "Name": "romantic_mahavira",
+                "EndpointID": "0be4a3724289c94d2da26d1ed7dcd896809982f7b41134ebac3b074cfd3b7b42",
+                "MacAddress": "02:42:ac:11:00:02",
+                "IPv4Address": "172.17.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Options": {
+            "com.docker.network.bridge.default_bridge": "true",
+            "com.docker.network.bridge.enable_icc": "true",
+            "com.docker.network.bridge.enable_ip_masquerade": "true",
+            "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",
+            "com.docker.network.bridge.name": "docker0",
+            "com.docker.network.driver.mtu": "1500"
+        },
+        "Labels": {}
+    },
+    {
+        "Id": "5fa57fd0dac29d77b04a1eb45ce7c742a6aa5ff712190e96a9e9458af247e75a",
+        "Created": "2025-03-13T15:46:02.339800368Z",
+        "Path": "httpd-foreground",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 3703,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2025-03-13T15:46:02.757826257Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:0de612e991352926be994158377c9f14147fe31e3ae92927f3b1b37dbf88ab10",
+        "ResolvConfPath": "/var/lib/docker/containers/5fa57fd0dac29d77b04a1eb45ce7c742a6aa5ff712190e96a9e9458af247e75a/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/5fa57fd0dac29d77b04a1eb45ce7c742a6aa5ff712190e96a9e9458af247e75a/hostname",
+        "HostsPath": "/var/lib/docker/containers/5fa57fd0dac29d77b04a1eb45ce7c742a6aa5ff712190e96a9e9458af247e75a/hosts",
+        "LogPath": "/var/lib/docker/containers/5fa57fd0dac29d77b04a1eb45ce7c742a6aa5ff712190e96a9e9458af247e75a/5fa57fd0dac29d77b04a1eb45ce7c742a6aa5ff712190e96a9e9458af247e75a-json.log",
+        "Name": "/gracious_curran",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "my_volume:/app"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {
+                "5000/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "9000"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                26,
+                105
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/659359a1ab02b4993db1c96d8e584dcc15b235b0267dd02efe25b8ea224dec38-init/diff:/var/lib/docker/overlay2/3d6164306c031e894863a865bb3c0687a1efc4d0997ccee1e821e95b93bf49d2/diff:/var/lib/docker/overlay2/27f83e76dfde50823a332022918b0778c0d59e307c0ad03e129cfbe4b28b1795/diff:/var/lib/docker/overlay2/18f6840415f52891963a5c8fb8c8f181d196274af7c478dd0462ae7e8a5f5951/diff:/var/lib/docker/overlay2/230155aa1550652e0c16689d81ab00a1e1d3907a3fe71d4d1b5021c2b166d743/diff:/var/lib/docker/overlay2/2615bad89632a6f8d365c14d9bdea9ee2129d8190b2a54935622c4752cd6e107/diff:/var/lib/docker/overlay2/8d0dcdbfd8cddea60ecd0ba7ce2fdddb2d8732a9703526432fc4afecb8cdbea9/diff",
+                "MergedDir": "/var/lib/docker/overlay2/659359a1ab02b4993db1c96d8e584dcc15b235b0267dd02efe25b8ea224dec38/merged",
+                "UpperDir": "/var/lib/docker/overlay2/659359a1ab02b4993db1c96d8e584dcc15b235b0267dd02efe25b8ea224dec38/diff",
+                "WorkDir": "/var/lib/docker/overlay2/659359a1ab02b4993db1c96d8e584dcc15b235b0267dd02efe25b8ea224dec38/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "my_volume",
+                "Source": "/var/lib/docker/volumes/my_volume/_data",
+                "Destination": "/app",
+                "Driver": "local",
+                "Mode": "z",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "5fa57fd0dac2",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5000/tcp": {},
+                "80/tcp": {}
+            },
+            "Tty": true,
+            "OpenStdin": true,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/apache2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "HTTPD_PREFIX=/usr/local/apache2",
+                "HTTPD_VERSION=2.4.63",
+                "HTTPD_SHA256=88fc236ab99b2864b248de7d49a008ec2afd7551e64dce8b95f58f32f94c46ab",
+                "HTTPD_PATCHES="
+            ],
+            "Cmd": [
+                "httpd-foreground"
+            ],
+            "Image": "httpd",
+            "Volumes": null,
+            "WorkingDir": "/usr/local/apache2",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {},
+            "StopSignal": "SIGWINCH"
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "0e008033881db7c49bec9ed87d82cf2660b9d8fe36c1ca71a8c15e116a39d55a",
+            "SandboxKey": "/var/run/docker/netns/0e008033881d",
+            "Ports": {
+                "5000/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "9000"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "9000"
+                    }
+                ],
+                "80/tcp": null
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "97e4fadf6e5272b2d1fec9fb51678e56b3e7ca94065037cd290fc04a941b6b7a",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.4",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:04",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "02:42:ac:11:00:04",
+                    "NetworkID": "133f881d00d103fc3c309bc3c1695a9dcafb4289c5a9e083c6286ccd6b41d6f8",
+                    "EndpointID": "97e4fadf6e5272b2d1fec9fb51678e56b3e7ca94065037cd290fc04a941b6b7a",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.4",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DriverOpts": null,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]
+root@ip-172-31-84-200:~# docker inspect bridge 5fa57fd0dac2 | grep -i ""IPAddress""IPAddress"
+            "SecondaryIPAddresses": null,
+            "IPAddress": "172.17.0.4",
+                    "IPAddress": "172.17.0.4",
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# 
+root@ip-172-31-84-200:~# date
+Thu Mar 13 15:52:34 UTC 2025
+root@ip-172-31-84-200:~# exit
+logout
+ubuntu@ip-172-31-84-200:~$ 
+logout
