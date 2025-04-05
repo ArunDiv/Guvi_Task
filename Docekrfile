@@ -1,0 +1,16 @@
+# Use an official Python runtime as a base image
+FROM python:3.9-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container
+COPY . /app
+
+# Install any required Python dependencies
+# Ensure you have a 'requirements.txt' file listing your dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Command to run your Python application
+# Replace 'app.py' with the name of your main script
+CMD ["python", "app.py"]
