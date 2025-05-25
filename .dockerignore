@@ -1,0 +1,28 @@
+# Exclude Git files
+.git
+.gitignore
+
+# Exclude scripts and config files that are used for building/deployment
+# but not needed INSIDE the final Docker image.
+# Your Dockerfile uses git clone for the app source, so it doesn't need local source.
+Dockerfile
+docker-compose.yml
+build.sh
+deploy.sh
+nginx.conf # This is COPIED into the image, but we don't need the host version in the context.
+
+# Exclude development specific files/folders
+.env
+.idea/
+.vscode/
+node_modules/ # If you had a Node.js setup locally
+*.log
+logs/
+tmp/
+*.tmp
+*.swp
+*.bak
+
+# If you had a 'build' folder locally from a React build, you would ignore it.
+# Since your Dockerfile clones directly, you won't have it on the host in this repo.
+# build/

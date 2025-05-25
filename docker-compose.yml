@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  my-react-app: # This is the name of your service (used in scripts too)
+    build:
+      context: . # Look for Dockerfile in the current folder
+      dockerfile: Dockerfile
+    ports:
+      - "80:80" # Map host's port 80 to container's port 80
+    restart: always # Always restart the container if it stops

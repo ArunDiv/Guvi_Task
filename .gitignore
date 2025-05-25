@@ -1,0 +1,39 @@
+# Ignore common operating system generated files
+.DS_Store
+Thumbs.db
+
+# Ignore Node.js related files and folders (if you had a Node.js build directly in this repo)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ignore environment variables files
+.env
+.env.*.local
+
+# Ignore compiled/generated artifacts
+build/
+dist/
+*.log
+logs/
+tmp/
+*.tmp
+*.swp
+*.bak
+
+# IDE and editor specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Docker-related local build artifacts that should NOT be pushed to Git
+# (These are not the Dockerfile or scripts, but things Docker might generate locally)
+.dockerignore # Don't commit this file itself to git (though it's usually harmless to do so)
+
+# Explicitly ensure that important files are NOT ignored (if they might be caught by other rules)
+!Dockerfile
+!docker-compose.yml
+!nginx.conf
+!build.sh
+!deploy.sh
