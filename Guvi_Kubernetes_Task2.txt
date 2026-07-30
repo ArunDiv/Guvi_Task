@@ -1,0 +1,457 @@
+                                                       ?
+
+ ? 2026-07-30 ? ? 10:37.13 ? ? /drives/c/Users/ErAru/Downloads ? ssh -i Devops-Project.pem ubuntu@13.221.221.180
+Welcome to Ubuntu 26.04 LTS (GNU/Linux 7.0.0-1006-aws x86_64)
+
+ * Documentation:  https://docs.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Jul 30 05:06:45 UTC 2026
+
+  System load:  0.37              Processes:             171
+  Usage of /:   94.5% of 6.61GB   Users logged in:       0
+  Memory usage: 23%               IPv4 address for enX0: 172.31.92.141
+  Swap usage:   0%
+
+  => / is using 94.5% of 6.61GB
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+92 updates can be applied immediately.
+71 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Thu Jul 30 05:07:01 2026 from 122.164.82.26
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl get namespaces
+NAME              STATUS   AGE
+default           Active   21h
+kube-node-lease   Active   21h
+kube-public       Active   21h
+kube-system       Active   21h
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ mkdir production && mkdir development
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ ls
+development  production
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ cd development/
+ubuntu@ip-172-31-92-141:~/development$
+ubuntu@ip-172-31-92-141:~/development$
+ubuntu@ip-172-31-92-141:~/development$ ls
+ubuntu@ip-172-31-92-141:~/development$
+ubuntu@ip-172-31-92-141:~/development$
+ubuntu@ip-172-31-92-141:~/development$
+ubuntu@ip-172-31-92-141:~/development$ cat << EOF > Dev-Namespace.yaml
+> apiVersion: v1
+kind: Namespace
+metadata:
+  name: development
+  labels:
+    name: development
+EOF
+ubuntu@ip-172-31-92-141:~/development$
+ubuntu@ip-172-31-92-141:~/development$
+ubuntu@ip-172-31-92-141:~/development$ vi Dev-Namespace.yaml
+ubuntu@ip-172-31-92-141:~/development$
+ubuntu@ip-172-31-92-141:~/development$
+ubuntu@ip-172-31-92-141:~/development$ yamllint Dev-Namespace.yaml
+ubuntu@ip-172-31-92-141:~/development$
+ubuntu@ip-172-31-92-141:~/development$
+ubuntu@ip-172-31-92-141:~/development$ kubectl apply -f Dev-Namespace.yaml
+namespace/development created
+ubuntu@ip-172-31-92-141:~/development$ cd ..
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ cd production/
+ubuntu@ip-172-31-92-141:~/production$ ls
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ kubectl get ns
+NAME              STATUS   AGE
+default           Active   21h
+development       Active   21s
+kube-node-lease   Active   21h
+kube-public       Active   21h
+kube-system       Active   21h
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ cat << EOF > Pro-Namespace.yaml
+> ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production
+  labels:
+    name: production
+EOF
+ubuntu@ip-172-31-92-141:~/production$ ls
+Pro-Namespace.yaml
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ yamllint Pro-Namespace.yaml
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ kubectl create -f Pro-Namespace.yaml
+namespace/production created
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ kubectl get ns
+NAME              STATUS   AGE
+default           Active   21h
+development       Active   104s
+kube-node-lease   Active   21h
+kube-public       Active   21h
+kube-system       Active   21h
+production        Active   5s
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ kubectl config view
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: /home/ubuntu/.minikube/ca.crt
+    extensions:
+    - extension:
+        last-update: Thu, 30 Jul 2026 04:47:56 UTC
+        provider: minikube.sigs.k8s.io
+        version: v1.38.1
+      name: cluster_info
+    server: https://192.168.49.2:8443
+  name: minikube
+contexts:
+- context:
+    cluster: minikube
+    namespace: development
+    user: minikube
+  name: dev
+- context:
+    cluster: minikube
+    extensions:
+    - extension:
+        last-update: Thu, 30 Jul 2026 04:47:56 UTC
+        provider: minikube.sigs.k8s.io
+        version: v1.38.1
+      name: context_info
+    namespace: default
+    user: minikube
+  name: minikube
+- context:
+    cluster: minikube
+    namespace: production
+    user: minikube
+  name: pro
+current-context: minikube
+kind: Config
+users:
+- name: minikube
+  user:
+    client-certificate: /home/ubuntu/.minikube/profiles/minikube/client.crt
+    client-key: /home/ubuntu/.minikube/profiles/minikube/client.key
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ kubectl config current-context
+minikube
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ kubectl config set-context dev --namespace=development --cluster=minikube --user=minikube
+Context "dev" modified.
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ kubectl co
+completion  (Output shell completion code for the specified shell (bash, zsh, fish, or powershell))
+config      (Modify kubeconfig files)
+cordon      (Mark node as unschedulable)
+ubuntu@ip-172-31-92-141:~/production$ kubectl config set-context pro --namespace=production --cluster=minikube --user=minikube
+Context "pro" modified.
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ kubectl config current-context
+minikube
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ kubectl get pods
+No resources found in default namespace.
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ kubectl get deployments
+No resources found in default namespace.
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ kubectl config current-context
+minikube
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ kubectl config use-context dev
+Switched to context "dev".
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ kubectl config current-context
+dev
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ kubectl get na
+error: the server doesn't have a resource type "na"
+ubuntu@ip-172-31-92-141:~/production$ kubectl get ns
+NAME              STATUS   AGE
+default           Active   21h
+development       Active   11m
+kube-node-lease   Active   21h
+kube-public       Active   21h
+kube-system       Active   21h
+production        Active   10m
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$
+ubuntu@ip-172-31-92-141:~/production$ cd
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ cat << EOF > Snowlake.yaml
+> ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snowflake
+spec:
+replicas: 2
+  selector:
+    matchLabels:
+      app: snowflake
+  template:
+    metadata:
+      labels:
+        app: snowflake
+    spec:
+      containers:
+      - name: snowflake
+        image: registry.k8s.io/serve_hostname
+        ports:
+        - containerPort: 80
+> EOF
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ cat Snowlake.yaml
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snowflake
+spec:
+replicas: 2
+  selector:
+    matchLabels:
+      app: snowflake
+  template:
+    metadata:
+      labels:
+        app: snowflake
+    spec:
+      containers:
+      - name: snowflake
+        image: registry.k8s.io/serve_hostname
+        ports:
+        - containerPort: 80
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ yamllint Snowlake.yaml
+Snowlake.yaml
+  8:11      error    syntax error: mapping values are not allowed here (syntax)
+
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ vi Snowlake.yaml
+ubuntu@ip-172-31-92-141:~$ yamllint Snowlake.yaml
+Snowlake.yaml
+  8:13      error    syntax error: mapping values are not allowed here (syntax)
+
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ cat Snowlake.yaml
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snowflake
+spec:
+  replicas: 2
+    selector:
+      matchLabels:
+        app: snowflake
+  template:
+    metadata:
+      labels:
+        app: snowflake
+    spec:
+      containers:
+      - name: snowflake
+        image: registry.k8s.io/serve_hostname
+        ports:
+        - containerPort: 80
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ vi Snowlake.yaml
+ubuntu@ip-172-31-92-141:~$ yamllint Snowlake.yaml
+Snowlake.yaml
+  17:7      error    wrong indentation: expected 8 but found 6  (indentation)
+  20:9      error    wrong indentation: expected 10 but found 8  (indentation)
+
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ cat << EOF > Snowlake.yaml
+> ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snowflake
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: snowflake
+  template:
+    metadata:
+      labels:
+        app: snowflake
+    spec:
+      containers:
+      - name: snowflake
+        image: registry.k8s.io/serve_hostname
+        ports:
+        - containerPort: 80
+EOF
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ yamllint Snowlake.yaml
+Snowlake.yaml
+  17:7      error    wrong indentation: expected 8 but found 6  (indentation)
+  20:9      error    wrong indentation: expected 10 but found 8  (indentation)
+
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ cat << EOF > Snowlake.yaml
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snowflake
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: snowflake
+  template:
+    metadata:
+      labels:
+        app: snowflake
+    spec:
+      containers:
+        - name: snowflake
+          image: registry.k8s.io/serve_hostname
+          ports:
+            - containerPort: 80
+EOF
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ yamllint Snowlake.yaml
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl apply -f Snowlake.yaml
+deployment.apps/snowflake created
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl get deployments.apps
+NAME        READY   UP-TO-DATE   AVAILABLE   AGE
+snowflake   2/2     2            2           10s
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl get deployments -n production
+No resources found in production namespace.
+ubuntu@ip-172-31-92-141:~$ kubectl get deployments -n development
+NAME        READY   UP-TO-DATE   AVAILABLE   AGE
+snowflake   2/2     2            2           40s
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl get pods -l app=snowflake
+NAME                         READY   STATUS    RESTARTS   AGE
+snowflake-7bfbf7c5b5-8n2sg   1/1     Running   0          82s
+snowflake-7bfbf7c5b5-jk84r   1/1     Running   0          82s
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl get pods -o wide
+NAME                         READY   STATUS    RESTARTS   AGE   IP            NODE       NOMINATED NODE   READINESS GATES
+snowflake-7bfbf7c5b5-8n2sg   1/1     Running   0          94s   10.244.0.19   minikube   <none>           <none>
+snowflake-7bfbf7c5b5-jk84r   1/1     Running   0          94s   10.244.0.20   minikube   <none>           <none>
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl get pods --label snowflake
+error: unknown flag: --label
+See 'kubectl get --help' for usage.
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl get pods --label app=snowflake
+error: unknown flag: --label
+See 'kubectl get --help' for usage.
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl get pods --show-labels
+NAME                         READY   STATUS    RESTARTS   AGE     LABELS
+snowflake-7bfbf7c5b5-8n2sg   1/1     Running   0          2m44s   app=snowflake,pod-template-hash=7bfbf7c5b5
+snowflake-7bfbf7c5b5-jk84r   1/1     Running   0          2m44s   app=snowflake,pod-template-hash=7bfbf7c5b5
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl config use-context prod
+error: no context exists with the name: "prod"
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl config use-context pro
+Switched to context "pro".
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl get pods
+No resources found in production namespace.
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl get pods -n development
+NAME                         READY   STATUS    RESTARTS   AGE
+snowflake-7bfbf7c5b5-8n2sg   1/1     Running   0          3m26s
+snowflake-7bfbf7c5b5-jk84r   1/1     Running   0          3m26s
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl create deployment cattle --image=registry.k8s.io/serve_hostname --replicas=5
+deployment.apps/cattle created
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl get pods
+NAME                      READY   STATUS    RESTARTS   AGE
+cattle-67946957c7-cv8rg   1/1     Running   0          4s
+cattle-67946957c7-f97hk   1/1     Running   0          4s
+cattle-67946957c7-k6qcj   1/1     Running   0          4s
+cattle-67946957c7-ksr5m   1/1     Running   0          4s
+cattle-67946957c7-z82v2   1/1     Running   0          4s
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$ kubectl get deployments.apps
+NAME     READY   UP-TO-DATE   AVAILABLE   AGE
+cattle   5/5     5            5           12s
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
+ubuntu@ip-172-31-92-141:~$
